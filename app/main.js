@@ -120,7 +120,8 @@ for(const [lineNumber,line] of lines.entries()){
           num=num*10+parseInt(line[i]);
           i++;
         }
-      tokens+=`NUMBER ${num} ${(parseFloat(num))}\n`;
+        let ans=parseFloat(num);
+      tokens+=`NUMBER ${num} ${(ans)}\n`;
     }
     else if(ch=='"'){
       i++;
