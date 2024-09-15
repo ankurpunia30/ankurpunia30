@@ -58,6 +58,9 @@ for(const line of lines){
     else if(ch==','){
       tokens+='COMMA , null\n';
     }
+    else if(ch==';'){
+      tokens+='SEMICOLON ; null\n';
+    }
   }
 }
 }
