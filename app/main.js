@@ -28,3 +28,20 @@ if (fileContent.length !== 0) {
 } else {
   console.log("EOF  null");
 }
+
+//second stage - parser
+//parsing the tokens
+let lines=fileContent.split("\n");
+let tokens='';
+for(const line of lines){
+  for(const ch of line){
+    if(ch=='('){
+      tokens+='LEFT_PAREN ( null\n';
+    }
+    else if(ch==')'){
+      tokens+='RIGHT_PAREN ) null\n';
+    }
+  }
+}
+token+=`EOF null\n`;
+console.log(tokens); 
