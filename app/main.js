@@ -113,15 +113,14 @@ for(const [lineNumber,line] of lines.entries()){
         tokens+='EQUAL = null\n';
       }
     }
-    else if(isFinite(ch)){
+    else if(ch>='0'&& ch<='9'){
       let num=0;
       
-      while(isFinite(line[i])){
-          num=num*10+line[i];
+      while(line[i]>='0'&& line[i]<='9'){
+          num=num*10+parseInt(line[i]);
           i++;
-
-      }
-      tokens+=`NUMBER ${num} ${(num*1.00)}\n`;
+        }
+      tokens+=`NUMBER ${num} ${(parseFloat(num))}\n`;
     }
     else if(ch=='"'){
       i++;
