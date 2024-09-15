@@ -33,7 +33,7 @@ let lines=fileContent.split("\n");
 for(const [lineNumber,line] of lines.entries()){
   
   for(let i =0;i<line.length;i++){
-    ch=line[i];
+    let ch=line[i];
     if(ch=='('){
       tokens+='LEFT_PAREN ( null\n';
     }
