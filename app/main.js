@@ -113,28 +113,6 @@ for(const [lineNumber,line] of lines.entries()){
         tokens+='EQUAL = null\n';
       }
     }
-    else if(str[j] >= '0' && str[j] <= '9'){
-      const startDigit = j;
-      while(j<str.length && str[j] >= '0' && str[j] <= '9'){
-        j++;
-      }
-      if(str[j]=="." && j+1 < str.length && str[j+1]>= '0' && str[j+1]<= '9'){
-        j++;
-        while(j< str.length && str[j] >= '0' && str[j] <= '9'){
-          j++;
-        }
-      }
-      const numberString = str.slice(startDigit, j);
-      j--;
-      let num = parseFloat(numberString);
-      if(Number.isInteger(num)){
-        let formattedNum = num.toFixed(1);
-        token+=`NUMBER ${numberString} ${formattedNum}\n`
-      }
-      else{
-        token+=`NUMBER ${numberString} ${numberString}\n`
-      }
-    }
     else if(ch=='"'){
       i++;
       let literal=""
@@ -149,6 +127,28 @@ for(const [lineNumber,line] of lines.entries()){
         isError=true;
       }
     }
+    else if (line[i] >= '0' && line[i] <= '9') {
+      const startDigit = i;
+      while (i < line.length && line[i] >= '0' && line[i] <= '9') {
+        i++;
+      }
+      if (line[i] === "." && i + 1 < line.length && line[i + 1] >= '0' && line[i + 1] <= '9') {
+        i++;
+        while (i < line.length && line[i] >= '0' && line[i] <= '9') {
+          i++;
+        }
+      }
+      const numberString = line.slice(startDigit, i);
+      i--;
+      let num = parseFloat(numberString);
+      if (Number.isInteger(num)) {
+        let formattedNum = num.toFixed(1);
+        token += `NUMBER ${numberString} ${formattedNum}\n`;
+      } else {
+        token += `NUMBER ${numberString} ${numberString}\n`;
+      }
+    }
+    
     else {
       console.error(`[line ${lineNumber+1}] Error: Unexpected character: ${ch}`);
       isError=true;
