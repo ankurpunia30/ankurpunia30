@@ -32,7 +32,8 @@ let lines=fileContent.split("\n");
 
 for(const [lineNumber,line] of lines.entries()){
   
-  for(const ch of line){
+  for(const i in Range(0,line.length)){
+    ch=line[i];
     if(ch=='('){
       tokens+='LEFT_PAREN ( null\n';
     }
@@ -62,6 +63,13 @@ for(const [lineNumber,line] of lines.entries()){
     }
     else if(ch==';'){
       tokens+='SEMICOLON ; null\n';
+    }
+    else if(ch=='=' && lines[i+1]=='=' && i+1<line.length){
+      tokens+='EQUAL_EQUAL == null\n';
+      i++;
+    }
+    else if(ch=='='){
+      tokens+='EQUAL = null\n';
     }
     else {
       console.error(`[line ${lineNumber+1}] Error: Unexpected character: ${ch}`);
