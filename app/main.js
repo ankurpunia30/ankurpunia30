@@ -42,3 +42,4 @@ for(const line of lines){
 }
 tokens+='EOF null';
 //console.log(tokens);
+console.log(tokens);
