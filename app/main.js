@@ -114,18 +114,31 @@ for(const [lineNumber,line] of lines.entries()){
       }
     }
     else if(ch>='0'&& ch<='9'){
-      let num = 0;
+      let numStr = '';
     
-    while (i < line.length && line[i] >= '0' && line[i] <= '9') {
-        num = num * 10 + parseInt(line[i], 10); // specify radix for parseInt
-        i++;
-    }
-    
-    // Convert integer to float if necessary
-    let ans = parseFloat(num);
-    
-    // Assuming tokens is properly initialized elsewhere
-    tokens += `NUMBER ${num} ${ans}.0\n`;
+      // Handle the integer part
+      while (i < line.length && (line[i] >= '0' && line[i] <= '9')) {
+          numStr += line[i];
+          i++;
+      }
+      
+      // Handle the decimal point and fractional part if present
+      if (i < line.length && line[i] === '.') {
+          numStr += '.';
+          i++;
+          
+          // Continue to handle the fractional part
+          while (i < line.length && (line[i] >= '0' && line[i] <= '9')) {
+              numStr += line[i];
+              i++;
+          }
+      }
+      
+      // Convert the collected string to a float
+      let ans = parseFloat(numStr);
+      
+      // Assuming tokens is properly initialized elsewhere
+      tokens += `NUMBER ${numStr} ${ans}\n`;
     }
     else if(ch=='"'){
       i++;
