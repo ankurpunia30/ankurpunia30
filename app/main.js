@@ -116,7 +116,7 @@ for(const [lineNumber,line] of lines.entries()){
     else if(ch>='0'&& ch<='9'){
       let num=0;
       
-      while(line[i]>='0'&& line[i]<='9'){
+      while(i<line.length && line[i]>='0'&& line[i]<='9'){
           num=num*10+parseInt(line[i]);
           i++;
         }
