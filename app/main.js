@@ -121,7 +121,7 @@ for(const [lineNumber,line] of lines.entries()){
           i++;
 
       }
-      tokens+=`NUMBER ${num} ${float(num)}`;
+      tokens+=`NUMBER ${num} ${(num*1.00)}`;
     }
     else if(ch=='"'){
       i++;
