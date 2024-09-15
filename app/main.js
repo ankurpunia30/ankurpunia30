@@ -39,5 +39,5 @@ for(const line of lines){
   }
 }
  }
-tokens+="EOF null";
+tokens+='EOF null';
 console.log(tokens); 
