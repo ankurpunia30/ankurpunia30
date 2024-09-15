@@ -64,6 +64,15 @@ for(const [lineNumber,line] of lines.entries()){
     else if(ch==';'){
       tokens+='SEMICOLON ; null\n';
     }
+    else if(ch=='!'){
+      if(i+1<line.length &&line[i+1]=='='){
+        tokens+='BANG_EQUAL != null\n';
+        i++;
+      }
+      else{
+        tokens+='BANG ! null\n';
+      }
+    }
     else if(ch=='=' ){
       if(i+1<line.length &&line[i+1]=='='){
         tokens+='EQUAL_EQUAL == null\n';
