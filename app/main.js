@@ -1,4 +1,5 @@
 import fs from "fs";
+import { isFloat64Array } from "util/types";
 
 const args = process.argv.slice(2); // Skip the first two arguments (node path and script path)
 
@@ -111,6 +112,14 @@ for(const [lineNumber,line] of lines.entries()){
       else{
         tokens+='EQUAL = null\n';
       }
+    }
+    else if(isFinite(ch)){
+      let num=0;
+      
+      while(isFinite(ch)){
+          num=num*10+ch;
+      }
+      tokens+=`NUMBER ${num} ${Float64Array(num)}`;
     }
     else if(ch=='"'){
       i++;
