@@ -64,7 +64,7 @@ for(const [lineNumber,line] of lines.entries()){
       tokens+='SEMICOLON ; null\n';
     }
     else {
-      console.error(`[line ${lineNumber}] Error: Unexpected character: ${ch}`);
+      console.error(`[line ${lineNumber+1}] Error: Unexpected character: ${ch}`);
       isError=true;
     }
   }
@@ -73,6 +73,7 @@ for(const [lineNumber,line] of lines.entries()){
 tokens+='EOF  null\n';
 //console.log(tokens);
 console.log(tokens);
+
 if(isError){
   process.exit(65);
 }
