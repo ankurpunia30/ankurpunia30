@@ -113,32 +113,27 @@ for(const [lineNumber,line] of lines.entries()){
         tokens+='EQUAL = null\n';
       }
     }
-    else if(ch>='0'&& ch<='9'){
-      let numStr = '';
-    
-      // Handle the integer part
-      while (i < line.length && (line[i] >= '0' && line[i] <= '9')) {
-          numStr += line[i];
-          i++;
+    else if(str[j] >= '0' && str[j] <= '9'){
+      const startDigit = j;
+      while(j<str.length && str[j] >= '0' && str[j] <= '9'){
+        j++;
       }
-      
-      // Handle the decimal point and fractional part if present
-      if (i < line.length && line[i] === '.') {
-          numStr += '.';
-          i++;
-          
-          // Continue to handle the fractional part
-          while (i < line.length && (line[i] >= '0' && line[i] <= '9')) {
-              numStr += line[i];
-              i++;
-          }
+      if(str[j]=="." && j+1 < str.length && str[j+1]>= '0' && str[j+1]<= '9'){
+        j++;
+        while(j< str.length && str[j] >= '0' && str[j] <= '9'){
+          j++;
+        }
       }
-      
-      // Convert the collected string to a float
-      let ans = parseFloat(numStr);
-      
-      // Assuming tokens is properly initialized elsewhere
-      tokens += `NUMBER ${numStr} ${ans}\n`;
+      const numberString = str.slice(startDigit, j);
+      j--;
+      let num = parseFloat(numberString);
+      if(Number.isInteger(num)){
+        let formattedNum = num.toFixed(1);
+        token+=`NUMBER ${numberString} ${formattedNum}\n`
+      }
+      else{
+        token+=`NUMBER ${numberString} ${numberString}\n`
+      }
     }
     else if(ch=='"'){
       i++;
