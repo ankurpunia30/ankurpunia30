@@ -63,7 +63,7 @@ for(const line of lines){
       tokens+='SEMICOLON ; null\n';
     }
     else if(ch=='#' || ch=='$'){
-      tokens+='[line ${lineNumber}] Error: Unexpected character:${ch}\n';
+      tokens+='[line ${lineNumber}] Error: Unexpected character: ${ch}\n';
     }
   }
 }
