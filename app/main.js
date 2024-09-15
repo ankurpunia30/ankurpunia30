@@ -118,7 +118,7 @@ for(const [lineNumber,line] of lines.entries()){
       let ans="";
       while(i<line.length && line[i]>='0'&& line[i]<='9'){
           num=num*10+parseInt(line[i],10);
-          ans+=num;
+          ans+=line[i];
           i++;
         }
          ans=parseFloat(ans);
