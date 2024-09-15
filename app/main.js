@@ -117,12 +117,13 @@ for(const [lineNumber,line] of lines.entries()){
       while(j<line.length && line[j]!='"'){
         j++;
       }
-      if(j!=line.length ){
-        console.error(`[line ${lineNumber+1}] Error: : Unterminated string.`);
+      if(j==line.length){
+        console.error(`[line ${lineNumber+1}] Error: Unterminated string.`);
+        isError=true;
+        break;
       }
-      else {
-        tokens+='STRING'+`"${line.substring(i,j)}"`;
-      }
+      tokens+=`STRING "${line.substring(i+1,j)}" null\n`;
+      i=j;
     }
     else {
       console.error(`[line ${lineNumber+1}] Error: Unexpected character: ${ch}`);
