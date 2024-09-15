@@ -64,6 +64,25 @@ for(const [lineNumber,line] of lines.entries()){
     else if(ch==';'){
       tokens+='SEMICOLON ; null\n';
     }
+    else if(ch=='<'){
+      if(i+1<line.length &&line[i+1]=='='){
+        tokens+='LESS_EQUAL <= null\n';
+        i++;
+      }
+      else{
+        tokens+='LESS < null\n';
+      }
+    }
+    else if(ch=='>'){
+      
+      if(i+1<line.length &&line[i+1]=='='){
+        tokens+='GREATER_EQUAL >= null\n';
+        i++;
+      }
+      else{
+        tokens+='GREATER > null\n';
+      }
+    }
     else if(ch=='!'){
       if(i+1<line.length &&line[i+1]=='='){
         tokens+='BANG_EQUAL != null\n';
