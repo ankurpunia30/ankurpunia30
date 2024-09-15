@@ -24,6 +24,7 @@ const filename = args[1];
 const fileContent = fs.readFileSync(filename, "utf8");
 
 let tokens='';
+let isError=false;
  if (fileContent.length !== 0) {
 //second stage - parser
 //parsing the tokens
@@ -62,8 +63,9 @@ for(const line of lines){
     else if(ch==';'){
       tokens+='SEMICOLON ; null\n';
     }
-    else if(ch=='#' || ch=='$'){
-      tokens+='[line ${lineNumber}] Error: Unexpected character: ${ch}\n';
+    else {
+      console.log('[line ${lineNumber}] Error: Unexpected character: ${ch}');
+      isError=true;
     }
   }
 }
@@ -71,3 +73,6 @@ for(const line of lines){
 tokens+='EOF  null\n';
 //console.log(tokens);
 console.log(tokens);
+if(isError){
+  process.exit(65);
+}
