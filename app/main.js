@@ -23,11 +23,12 @@ const filename = args[1];
 //
 const fileContent = fs.readFileSync(filename, "utf8");
 
+let tokens='';
  if (fileContent.length !== 0) {
 //second stage - parser
 //parsing the tokens
 let lines=fileContent.split("\n");
-let tokens='';
+
 for(const line of lines){
   for(const ch of line){
     if(ch=='('){
@@ -38,6 +39,6 @@ for(const line of lines){
     }
   }
 }
- }
-tokens+='EOF null';
-console.log(tokens); 
+}
+
+//console.log(tokens);
