@@ -64,12 +64,14 @@ for(const [lineNumber,line] of lines.entries()){
     else if(ch==';'){
       tokens+='SEMICOLON ; null\n';
     }
-    else if(ch=='=' && lines[i+1]=='=' && i+1<line.length){
-      tokens+='EQUAL_EQUAL == null\n';
-      i++;
-    }
-    else if(ch=='='){
-      tokens+='EQUAL = null\n';
+    else if(ch=='=' ){
+      if(i+1<line.length &&line[i+1]=='='){
+        tokens+='EQUAL_EQUAL == null\n';
+        i++;
+      }
+      else{
+        tokens+='EQUAL = null\n';
+      }
     }
     else {
       console.error(`[line ${lineNumber+1}] Error: Unexpected character: ${ch}`);
