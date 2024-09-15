@@ -116,8 +116,10 @@ for(const [lineNumber,line] of lines.entries()){
     else if(isFinite(ch)){
       let num=0;
       
-      while(isFinite(ch)){
-          num=num*10+ch;
+      while(isFinite(line[i])){
+          num=num*10+line[i];
+          i++;
+
       }
       tokens+=`NUMBER ${num} ${Float64Array(num)}`;
     }
