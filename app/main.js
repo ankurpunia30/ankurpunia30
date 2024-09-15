@@ -117,7 +117,7 @@ for(const [lineNumber,line] of lines.entries()){
       while(j<line.length && line[j]!='"'){
         j++;
       }
-      if(j==line.length ){
+      if(j!=line.length ){
         console.error(`[line ${lineNumber+1}] Error: : Unterminated string.`);
       }
       else {
