@@ -43,6 +43,21 @@ for(const line of lines){
     else if(ch=='}'){
       tokens+='RIGHT_BRACE } null\n';
     }
+    else if(ch=='+'){
+      tokens+='PLUS + null\n';
+    }
+    else if(ch=='-'){
+      tokens+='MINUS - null\n';
+    }
+    else if(ch=='*'){
+      tokens+='STAR * null\n';
+    }
+    else if(ch=='.'){
+      tokens+='DOT . null\n';
+    }
+    else if(ch==','){
+      tokens+='COMMA , null\n';
+    }
   }
 }
 }
