@@ -23,12 +23,7 @@ const filename = args[1];
 //
 const fileContent = fs.readFileSync(filename, "utf8");
 
-// if (fileContent.length !== 0) {
-//   throw new Error("Scanner not implemented");
-// } else {
-//   console.log("EOF  null");
-// }
-
+ if (fileContent.length !== 0) {
 //second stage - parser
 //parsing the tokens
 let lines=fileContent.split("\n");
@@ -43,5 +38,6 @@ for(const line of lines){
     }
   }
 }
-token+=`EOF null\n`;
+ }
+token+="EOF null";
 console.log(tokens); 
