@@ -115,12 +115,13 @@ for(const [lineNumber,line] of lines.entries()){
     }
     else if(ch>='0'&& ch<='9'){
       let num=0;
-      
+      let ans="";
       while(i<line.length && line[i]>='0'&& line[i]<='9'){
           num=num*10+parseInt(line[i],10);
+          ans+=num;
           i++;
         }
-        let ans=parseFloat(num);
+         ans=parseFloat(ans);
       tokens+=`NUMBER ${num} ${(ans)}\n`;
     }
     else if(ch=='"'){
