@@ -122,7 +122,7 @@ for(const [lineNumber,line] of lines.entries()){
         isError=true;
         break;
       }
-      tokens+=`STRING "${line.substring(i+1,j)}"\n`;
+      tokens+=`STRING \"${line.substring(i+1,j)}\"\n`;
       i=j;
     }
     else {
