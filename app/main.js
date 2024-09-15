@@ -121,7 +121,7 @@ for(const [lineNumber,line] of lines.entries()){
           i++;
 
       }
-      tokens+=`NUMBER ${num} ${Float64Array(num)}`;
+      tokens+=`NUMBER ${num} ${float(num)}`;
     }
     else if(ch=='"'){
       i++;
