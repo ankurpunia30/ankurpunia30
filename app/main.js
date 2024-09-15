@@ -37,6 +37,12 @@ for(const line of lines){
     else if(ch==')'){
       tokens+='RIGHT_PAREN ) null\n';
     }
+    else if(ch=='{'){
+      tokens+='LEFT_BRACE { null\n';
+    }
+    else if(ch=='}'){
+      tokens+='RIGHT_BRACE } null\n';
+    }
   }
 }
 }
