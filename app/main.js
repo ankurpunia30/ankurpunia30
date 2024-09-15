@@ -125,7 +125,7 @@ for(const [lineNumber,line] of lines.entries()){
     let ans = parseFloat(num);
     
     // Assuming tokens is properly initialized elsewhere
-    tokens += `NUMBER ${num} ${ans}+".0"\n`;
+    tokens += `NUMBER ${num} ${ans}.0\n`;
     }
     else if(ch=='"'){
       i++;
