@@ -145,7 +145,7 @@ for(const [lineNumber,line] of lines.entries()){
         let formattedNum = num.toFixed(1);
         token += `NUMBER ${numberString} ${formattedNum}\n`;
       } else {
-        token += `NUMBER ${numberString} ${numberString}\n`;
+        tokens += `NUMBER ${numberString} ${numberString}\n`;
       }
     }
     
