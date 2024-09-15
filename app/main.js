@@ -29,9 +29,9 @@ let isError=false;
 //second stage - parser
 //parsing the tokens
 let lines=fileContent.split("\n");
-let lineNumber=0;
-for(const line of lines){
-  lineNumber++;
+
+for(const [lineNumber,line] of lines.entries()){
+  
   for(const ch of line){
     if(ch=='('){
       tokens+='LEFT_PAREN ( null\n';
@@ -64,7 +64,7 @@ for(const line of lines){
       tokens+='SEMICOLON ; null\n';
     }
     else {
-      console.log(`[line ${lineNumber}] Error: Unexpected character: ${ch}`);
+      console.error(`[line ${lineNumber}] Error: Unexpected character: ${ch}`);
       isError=true;
     }
   }
