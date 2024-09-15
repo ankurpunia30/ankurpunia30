@@ -120,7 +120,7 @@ for(const [lineNumber,line] of lines.entries()){
         i++;
       }
       if(i<line.length && line[i]==='"')
-      tokens+=`STRING \"${line.substring(i+1,j-1)}\"\n`;
+      tokens+=`STRING \"${literal}\"\n`;
       else{
         console.error(`[line ${lineNumber} Error: Unterminated string.]`);
         isError=true;
