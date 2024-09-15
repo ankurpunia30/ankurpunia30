@@ -143,7 +143,7 @@ for(const [lineNumber,line] of lines.entries()){
       let num = parseFloat(numberString);
       if (Number.isInteger(num)) {
         let formattedNum = num.toFixed(1);
-        token += `NUMBER ${numberString} ${formattedNum}\n`;
+        tokens += `NUMBER ${numberString} ${formattedNum}\n`;
       } else {
         tokens += `NUMBER ${numberString} ${numberString}\n`;
       }
