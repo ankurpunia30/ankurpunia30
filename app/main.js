@@ -40,6 +40,6 @@ for(const line of lines){
   }
 }
 }
-tokens+='EOF null';
+tokens+='EOF null\n';
 //console.log(tokens);
 console.log(tokens);
