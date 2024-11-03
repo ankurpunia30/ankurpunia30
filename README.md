@@ -5,7 +5,7 @@
 
 <p align="left"> <a href="https://github.com/ryo-ma/github-profile-trophy"><img src="https://github-profile-trophy.vercel.app/?username=ankurpunia30" alt="ankurpunia30" /></a> </p>
 
-- 🔭 I’m currently working on [PizzaPal](https://github.com/ankurpunia30/PizzaPal)
+- 🔭 I’m currently working on [EduMitar](https://github.com/ankurpunia30/educational-platform.git)
 
 - 🌱 I’m currently learning **React Native,Typescript**
 
