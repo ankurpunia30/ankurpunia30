@@ -1,5 +1,5 @@
 <h1 align="center">Hi 👋, I'm Ankur</h1>
-<h3 align="center">A passionate App developer from India</h3>
+<h3 align="center">A passionate Full Stack  developer from India</h3>
 
 <p align="left"> <img src="https://komarev.com/ghpvc/?username=ankurpunia30&label=Profile%20views&color=0e75b6&style=flat" alt="ankurpunia30" /> </p>
 
@@ -7,7 +7,7 @@
 
 - 🔭 I’m currently working on [EduMitar](https://github.com/ankurpunia30/educational-platform.git)
 
-- 🌱 I’m currently learning **React Native,Typescript**
+- 🌱 I’m currently learning **Backend Development And Gen AI**
 
 - 👨‍💻 All of my projects are available at [https://github.com/ankurpunia30](https://github.com/ankurpunia30)
 
